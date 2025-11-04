@@ -9,9 +9,9 @@ def multiply(a, b):
 
 def divide(a, b):
     if b == 0:
-        return a / b
+        return "Error: You Can Not Divide A Number On Zero"
     else:
-        return "Error: Division by zero!"
+        return a / b
 
 if __name__ == "__main__":
     print("Simple Calculator")
