@@ -20,7 +20,7 @@ class TestCalculator(unittest.TestCase):
         self.assertEqual(divide(10, 2), 5)
     
     def test_divide_by_zero(self):
-        self.assertEqual(divide(10, 0))
+        self.assertEqual(divide(10, 0), "Error: You Can Not Divide A Number On Zero")
 
 if __name__ == '__main__':
     unittest.main()
