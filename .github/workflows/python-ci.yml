@@ -1,0 +1,23 @@
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+jobs:
+  test:
+    runs-on: self-hosted
+    steps:
+      - name:
+        uses: actions/checkout@3
+
+      - name: run python test
+        run: |
+          echo "running python tests ...."
+          python3 test_calculator.py -v
+          echo "all tests done"
+      - name: run the python application
+        run: |
+          echo "running the application ...."
+          python3 calculator.py
+          echo " application is running!"
+
