@@ -1,0 +1,19 @@
+# environment variables
+.env
+*.env.local
+
+
+# temporary files
+*.tmp
+*.temp
+*.swp
+
+# log files
+*.log
+logs/
+
+# build outputs
+build/
+dist/
+*.exe
+
