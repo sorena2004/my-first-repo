@@ -22,12 +22,15 @@ jobs:
           python3 calculator.py
           echo " application is running!"
   build:
+    need: test
     runs-on: self-hosted
     steps:
       - name: build image from python.py
         run: |
-          echo " building the image ..."
-          docker build -t calculator:${date} .
+          echo " removing the lastest version of image ..."
+          docker image rm calculator
+          echo "building a new image from python.py ..."
+          docker build -t calculator .
           docker image ls
           echo "image is built!"
 
