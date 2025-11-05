@@ -1,4 +1,4 @@
-FROM alpine:latest
+FROM alpine:3.21
 COPY ./calculator.py .
 USER  root
 RUN apk update && \
