@@ -1,7 +1,4 @@
-FROM alpine:3.21
+FROM python:3.11-slim
 COPY ./calculator.py .
-USER  root
-RUN apk update && \
-    apk add  pip3 
-CMD [ "python3", "calculator.py"]
+CMD [ "python", "calculator.py"]
 
