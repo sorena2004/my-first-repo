@@ -8,16 +8,31 @@ jobs:
     runs-on: self-hosted
     steps:
       - name:
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: run python test
         run: |
           echo "running python tests ...."
           python3 test_calculator.py -v
-          echo "all tests done"
+          echo "all tests done!"
+      
       - name: run the python application
         run: |
           echo "running the application ...."
           python3 calculator.py
           echo " application is running!"
+  build:
+    runs-on: self-hosted
+    steps:
+      - name: 
+        uses: actions/cache@v4
+        with:
+          path: ./.cache
+      
+      - name: build image from python.py
+        run: |
+          echo " building the image ..."
+          docker build -t calculator.py .
+          docker image ls
+          echo "image is built!"
 
