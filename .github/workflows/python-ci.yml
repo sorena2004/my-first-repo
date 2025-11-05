@@ -27,7 +27,7 @@ jobs:
       - name: build image from python.py
         run: |
           echo " building the image ..."
-          docker build -t calculator.py .
+          docker build -t calculator:${date} .
           docker image ls
           echo "image is built!"
 
